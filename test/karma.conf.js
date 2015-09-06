@@ -10,10 +10,10 @@ module.exports = function(config) {
         ],
         exclude: [],
         preprocessors: {},
-        reporters: ['dots', 'progress'],
+        reporters: ['dots'],
         port: 9876,
         colors: true,
-        logLevel: config.LOG_DEBUG,
+        logLevel: config.LOG_INFO,
         autoWatch: true,
         browsers: ['Chrome'],
         plugins: [
