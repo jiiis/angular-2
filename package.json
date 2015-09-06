@@ -14,7 +14,8 @@
     "url": "https://github.com/jiiis/angular-2/issues"
   },
   "devDependencies": {
-    "bower": "^1.5.2"
+    "bower": "^1.5.2",
+    "http-server": "^0.8.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
