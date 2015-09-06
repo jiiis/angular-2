@@ -1,19 +1,19 @@
 {
   "name": "angular-2",
-  "version": "1.0.0",
-  "description": "angular-2 =========",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "yngwie.chang@gmail.com",
+  "private": true,
+  "version": "0.0.1",
+  "description": "The second AngularJS tutorial.",
+  "license": "ISC",
+  "homepage": "https://github.com/jiiis/angular-2#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jiiis/angular-2.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/jiiis/angular-2/issues"
   },
-  "homepage": "https://github.com/jiiis/angular-2#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
