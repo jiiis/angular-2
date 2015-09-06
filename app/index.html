@@ -1,20 +1,23 @@
 <!doctype html>
 
-<html lang="en" ng-app>
+<html lang="en" ng-app="erNiuNiu">
 <head>
     <meta charset="UTF-8">
     <title>Angular Tutorial 2</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
 </head>
-<body>
+<body ng-controller="PhoneListCtrl">
     <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi, consectetur consequuntur
-            corporis culpa error eum illum impedit iure laboriosam natus numquam, quaerat, quia repellat veniam. Cumque
-            deleniti itaque sunt.</p>
-        <button class="btn btn-primary">{{ 0 + 1 + 'st' + ' test' }}</button>
+        <ul class="list-unstyled">
+            <li ng-repeat="phone in phones">
+                <h3>{{ phone.name }}</h3>
+                <p>{{ phone.description }}</p>
+            </li>
+        </ul>
     </div>
 
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
 </body>
 </html>
