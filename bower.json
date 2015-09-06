@@ -1,0 +1,17 @@
+{
+  "name": "angular-2",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jiiis/angular-2",
+  "authors": [
+    "Hao Chang <yngwie.chang@gmail.com>"
+  ],
+  "description": "The second AngularJS tutorial.",
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

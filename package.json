@@ -1,11 +1,11 @@
 {
   "name": "angular-2",
-  "author": "yngwie.chang@gmail.com",
+  "author": "Hao Chang <yngwie.chang@gmail.com>",
   "private": true,
   "version": "0.0.1",
   "description": "The second AngularJS tutorial.",
   "license": "ISC",
-  "homepage": "https://github.com/jiiis/angular-2#readme",
+  "homepage": "https://github.com/jiiis/angular-2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jiiis/angular-2.git"
