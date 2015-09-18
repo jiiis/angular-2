@@ -13,7 +13,7 @@ erNiuNiu.controller('PhoneListCtrl', function($scope) {
             description: 'The Next, Next Generation tablet.'
         },
         {
-            name: 'MOTOROLA XOOM™',
+            name: 'Motorola XOOM™',
             description: 'The Next, Next Generation tablet.'
         }
     ];

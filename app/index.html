@@ -9,12 +9,19 @@
 </head>
 <body ng-controller="PhoneListCtrl">
     <div class="container">
-        <ul class="list-unstyled">
-            <li ng-repeat="phone in phones">
-                <h3>{{ phone.name }}</h3>
-                <p>{{ phone.description }}</p>
-            </li>
-        </ul>
+        <div class="row">
+            <div class="col-md-2">
+                Search: <input ng-model="query">
+            </div>
+            <div class="col-md-10">
+                <ul class="list-unstyled">
+                    <li ng-repeat="phone in phones | filter:query">
+                        <h3>{{ phone.name }}</h3>
+                        <p>{{ phone.description }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <script src="bower_components/angular/angular.min.js"></script>
