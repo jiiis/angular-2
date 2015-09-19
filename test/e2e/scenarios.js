@@ -6,10 +6,10 @@ describe('erNiuNiu', function() {
             browser.get('app/index.html');
         });
 
-        it('should filter the phone list as the user types into the search box', function() {
-            var phoneList = element.all(by.repeater('phone in phones'));
-            var query = element(by.model('query'));
+        var phoneList = element.all(by.repeater('phone in phones')),
+            query = element(by.model('query'));
 
+        it('should filter the phone list as the user types into the search box', function() {
             expect(phoneList.count()).toBe(3);
 
             query.sendKeys('nexus');
@@ -18,6 +18,14 @@ describe('erNiuNiu', function() {
             query.clear();
             query.sendKeys('motorola');
             expect(phoneList.count()).toBe(2);
+        });
+
+        it('should display the current filter value as the page title', function() {
+            query.clear();
+            expect(browser.getTitle()).toMatch(/^erNiuNiu:\s*$/);
+
+            query.sendKeys('nexus');
+            expect(browser.getTitle()).toMatch(/^erNiuNiu: nexus$/);
         });
     });
 });
