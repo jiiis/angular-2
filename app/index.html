@@ -36,6 +36,7 @@
                 </ul>
             </div>
         </div>
+        <pre>{{ phones | filter:query | orderBy:orderProp | json }}</pre>
     </div>
 
     <script src="bower_components/angular/angular.min.js"></script>
