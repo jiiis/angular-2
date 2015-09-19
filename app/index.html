@@ -10,12 +10,25 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-2">
-                Search: <input ng-model="query">
+            <div class="col-md-3">
+                <h3>Controls</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="search">Search</label>
+                        <input type="text" id="search" class="form-control" placeholder="Keywords" ng-model="query">
+                    </div>
+                    <div class="form-group">
+                        <label for="sort">Sort</label>
+                        <select id="sort" class="form-control" ng-model="order">
+                            <option value="name">Alphabetically</option>
+                            <option value="age">Newest first</option>
+                        </select>
+                    </div>
+                </form>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-8 col-md-offset-1">
                 <ul class="list-unstyled">
-                    <li ng-repeat="phone in phones | filter:query">
+                    <li ng-repeat="phone in phones | filter:query | orderBy:order">
                         <h3>{{ phone.name }}</h3>
                         <p>{{ phone.description }}</p>
                     </li>
