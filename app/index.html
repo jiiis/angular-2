@@ -29,14 +29,18 @@
             </div>
             <div class="col-md-8 col-md-offset-1">
                 <ul class="list-unstyled">
-                    <li ng-repeat="phone in phones | filter:query | orderBy:order">
-                        <h3>{{ phone.name }}</h3>
+                    <li class="thumbnail" ng-repeat="phone in phones | filter:query | orderBy:order">
+                        <h3>
+                            <a href="#/phones/{{ phone.id }}">{{ phone.name }}</a>
+                        </h3>
+                        <a href="#/phones/{{ phone.id }}">
+                            <img class="img-thumbnail img-responsive" ng-src="{{ phone.imageUrl }}">
+                        </a>
                         <p>{{ phone.description }}</p>
                     </li>
                 </ul>
             </div>
         </div>
-        <pre>{{ phones | filter:query | orderBy:orderProp | json }}</pre>
     </div>
 
     <script src="bower_components/angular/angular.min.js"></script>
