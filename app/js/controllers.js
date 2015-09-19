@@ -2,7 +2,7 @@
 
 var erNiuNiu = angular.module('erNiuNiu', []);
 
-erNiuNiu.controller('PhoneListCtrl', function($scope) {
+erNiuNiu.controller('PhoneListCtrl', ['$scope', function($scope) {
     $scope.phones = [
         {
             name: 'Nexus S',
@@ -22,4 +22,4 @@ erNiuNiu.controller('PhoneListCtrl', function($scope) {
     ];
 
     $scope.order = 'age';
-});
+}]);
