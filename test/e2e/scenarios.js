@@ -10,14 +10,14 @@ describe('erNiuNiu', function() {
             eQuery = element(by.model('query'));
 
         it('should filter the phone list as the user types into the search box', function() {
-            expect(ePhones.count()).toBe(3);
+            expect(ePhones.count()).toBe(10);
 
             eQuery.sendKeys('nexus');
             expect(ePhones.count()).toBe(1);
 
             eQuery.clear();
             eQuery.sendKeys('motorola');
-            expect(ePhones.count()).toBe(2);
+            expect(ePhones.count()).toBe(3);
         });
 
         it('should display the current filter value as the page title', function() {

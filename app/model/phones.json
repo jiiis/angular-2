@@ -10,16 +10,16 @@
     "age": 1,
     "id": "motorola-xoom",
     "imageUrl": "img/phones/motorola-xoom.0.jpg",
-    "name": "MOTOROLA XOOM\u2122",
-    "description": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
+    "name": "Motorola XOOM\u2122",
+    "description": "The Next, Next Generation\n\nExperience the future with Motorola XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
   },
   {
     "age": 2,
     "carrier": "AT&T",
     "id": "motorola-atrix-4g",
     "imageUrl": "img/phones/motorola-atrix-4g.0.jpg",
-    "name": "MOTOROLA ATRIX\u2122 4G",
-    "description": "MOTOROLA ATRIX 4G the world's most powerful smartphone."
+    "name": "Motorola ATRIX\u2122 4G",
+    "description": "Motorola ATRIX 4G the world's most powerful smartphone."
   },
   {
     "age": 3,
@@ -96,7 +96,7 @@
     "carrier": "AT&T",
     "id": "motorola-bravo-with-motoblur",
     "imageUrl": "img/phones/motorola-bravo-with-motoblur.0.jpg",
-    "name": "MOTOROLA BRAVO\u2122 with MOTOBLUR\u2122",
+    "name": "Motorola BRAVO\u2122 with MOTOBLUR\u2122",
     "description": "An experience to cheer about."
   },
   {
