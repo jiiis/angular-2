@@ -6,25 +6,25 @@ describe('erNiuNiu', function() {
             browser.get('app/index.html');
         });
 
-        var $phones = element.all(by.repeater('phone in phones')),
-            $query = element(by.model('query'));
+        var ePhones = element.all(by.repeater('phone in phones')),
+            eQuery = element(by.model('query'));
 
         it('should filter the phone list as the user types into the search box', function() {
-            expect($phones.count()).toBe(3);
+            expect(ePhones.count()).toBe(3);
 
-            $query.sendKeys('nexus');
-            expect($phones.count()).toBe(1);
+            eQuery.sendKeys('nexus');
+            expect(ePhones.count()).toBe(1);
 
-            $query.clear();
-            $query.sendKeys('motorola');
-            expect($phones.count()).toBe(2);
+            eQuery.clear();
+            eQuery.sendKeys('motorola');
+            expect(ePhones.count()).toBe(2);
         });
 
         it('should display the current filter value as the page title', function() {
-            $query.clear();
+            eQuery.clear();
             expect(browser.getTitle()).toMatch(/^erNiuNiu:\s*$/);
 
-            $query.sendKeys('nexus');
+            eQuery.sendKeys('nexus');
             expect(browser.getTitle()).toMatch(/^erNiuNiu: nexus$/);
         });
 
@@ -37,8 +37,8 @@ describe('erNiuNiu', function() {
                     });
                 };
 
-            $query.clear();
-            $query.sendKeys('tablet');
+            eQuery.clear();
+            eQuery.sendKeys('tablet');
 
             expect(getPhoneNames()).toEqual([
                 'Motorola XOOM\u2122 with Wi-Fi',
