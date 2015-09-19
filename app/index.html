@@ -1,18 +1,20 @@
 <!doctype html>
 
-<html lang="en" ng-app="erNiuNiu" ng-controller="PhoneListCtrl">
+<html lang="en" ng-app="erNiuNiu">
 <head>
     <meta charset="UTF-8">
-    <title ng-bind-template="erNiuNiu: {{ query }}">erNiuNiu</title>
+    <title>erNiuNiu</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
-    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
+<body ng-controller="PhoneListCtrl">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h3>Controls</h3>
+                <h3>Filters</h3>
+                <hr>
                 <form>
                     <div class="form-group">
                         <label for="search">Search</label>
@@ -27,16 +29,22 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-8 col-md-offset-1">
-                <ul class="list-unstyled">
-                    <li class="thumbnail" ng-repeat="phone in phones | filter:query | orderBy:order">
-                        <h3>
-                            <a href="#/phones/{{ phone.id }}">{{ phone.name }}</a>
-                        </h3>
-                        <a href="#/phones/{{ phone.id }}">
-                            <img class="img-thumbnail img-responsive" ng-src="{{ phone.imageUrl }}">
-                        </a>
-                        <p>{{ phone.description }}</p>
+            <div class="col-md-8 col-md-offset-1 main">
+                <h3 ng-bind-template="Filtered by: {{ query }}"></h3>
+                <hr>
+                <ul class="list-unstyled media-list phone-list">
+                    <li class="media" ng-repeat="phone in phones | filter:query | orderBy:order">
+                        <div class="media-left media-middle">
+                            <a href="#/phones/{{ phone.id }}">
+                                <img class="media-object img-thumbnail" ng-src="{{ phone.imageUrl }}">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="#/phones/{{ phone.id }}">{{ phone.name }}</a>
+                            </h4>
+                            <p>{{ phone.description }}</p>
+                        </div>
                     </li>
                 </ul>
             </div>
