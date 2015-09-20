@@ -54,5 +54,12 @@ describe('erNiuNiu', function() {
                 'Motorola XOOM™ with Wi-Fi'
             ]);
         });
+
+        it('should render phone specific links', function() {
+            eQuery.clear();
+            eQuery.sendKeys('nexus');
+            element.all(by.css('.phone-list a')).first().click();
+            expect(browser.getLocationAbsUrl()).toMatch(/\/phones\/nexus\-s$/);
+        });
     });
 });
