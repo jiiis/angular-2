@@ -59,7 +59,10 @@ describe('erNiuNiu', function() {
             eQuery.clear();
             eQuery.sendKeys('nexus');
             element.all(by.css('.phone-list a')).first().click();
-            expect(browser.getLocationAbsUrl()).toMatch(/\/phones\/nexus\-s$/);
+            expect(browser.getLocationAbsUrl()).toBe('/phones/nexus-s');
+            browser.getLocationAbsUrl().then(function(url) {
+                expect(url).toBe('/phones/nexus-s');
+            });
         });
     });
 });
