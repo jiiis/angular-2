@@ -64,5 +64,11 @@ describe('erNiuNiu', function() {
                 expect(url).toBe('/phones/nexus-s');
             });
         });
+
+        it('should redirect index.html to index.html#/phones', function() {
+            browser.getLocationAbsUrl().then(function(url) {
+                expect(url).toBe('/phones');
+            });
+        });
     });
 });
