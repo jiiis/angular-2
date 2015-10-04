@@ -77,5 +77,9 @@ describe('erNiuNiu', function() {
         beforeEach(function() {
             browser.get('app/index.html#/phones/nexus-s');
         });
+
+        it('should show the correct phoneId binding value', function() {
+            expect(element(by.binding('phoneId')).getText()).toBe('nexus-s');
+        });
     });
 });
