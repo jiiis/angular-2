@@ -3,12 +3,12 @@
         <div class="col-xs-12">
             <div class="page-header row">
                 <div class="col-sm-6 col-md-4 hidden-xs">
-                    <img class="img-responsive center-block " ng-src="{{ imageCurrent }}">
+                    <img class="img-responsive center-block phone-detail-main-image" ng-src="{{ imageCurrent }}">
                 </div>
                 <div class="col-sm-6 col-md-8">
                     <h1>{{ phone.name }}</h1>
                     <p>{{ phone.description }}</p>
-                    <div class="row">
+                    <div class="row phone-detail-thumbs">
                         <div ng-repeat="image in phone.images" class="col-xs-6 col-sm-3 col-md-2">
                             <a href="" class="thumbnail">
                                 <img ng-src="{{ image }}" ng-click="setImage(image)">

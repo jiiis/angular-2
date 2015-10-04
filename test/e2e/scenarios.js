@@ -78,8 +78,20 @@ describe('erNiuNiu', function() {
             browser.get('app/index.html#/phones/nexus-s');
         });
 
-        it('should show the correct phoneId binding value', function() {
+        it('should show the correct phone.name binding value', function() {
             expect(element(by.binding('phone.name')).getText()).toBe('Nexus S');
+        });
+
+        it('should display the first image as the main image', function() {
+            expect(element(by.css('img.phone-detail-main-image')).getAttribute('src')).toMatch(/img\/phones\/nexus-s.0.jpg/);
+        });
+
+        it('should swap main image if a thumbnail is clicked on', function() {
+            element(by.css('.phone-detail-thumbs > div:nth-child(3) a')).click();
+            expect(element(by.css('img.phone-detail-main-image')).getAttribute('src')).toMatch(/img\/phones\/nexus-s.2.jpg/);
+
+            element(by.css('.phone-detail-thumbs > div:nth-child(1) a')).click();
+            expect(element(by.css('img.phone-detail-main-image')).getAttribute('src')).toMatch(/img\/phones\/nexus-s.0.jpg/);
         });
     });
 });
