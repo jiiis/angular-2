@@ -1,8 +1,8 @@
 'use strict';
 
-var erNiuNiu = angular.module('erNiuNiu', []);
+var erControllers = angular.module('erControllers', []);
 
-erNiuNiu.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http) {
+erControllers.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get('model/phones.json').success(function(phones) {
         $scope.phones = phones.splice(0, 50);
     });
