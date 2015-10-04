@@ -2,7 +2,8 @@
 
 var erNiuNiu = angular.module('erNiuNiu', [
     'ngRoute',
-    'erControllers'
+    'erControllers',
+    'erFilters'
 ]);
 
 erNiuNiu.config(['$routeProvider', function($routeProvider) {
