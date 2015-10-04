@@ -11,6 +11,10 @@ erNiuNiu.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'partials/phone-list.html',
             controller: 'PhoneListCtrl'
         })
+        .when('/phones/:phoneId', {
+            templateUrl: 'partials/phone-detail.html',
+            controller: 'PhoneDetailCtrl'
+        })
         .otherwise({
            redirectTo: '/phones'
         });

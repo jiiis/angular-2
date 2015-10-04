@@ -9,3 +9,7 @@ erControllers.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $
 
     $scope.order = 'age';
 }]);
+
+erControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+    $scope.phoneId = $routeParams.phoneId;
+}]);
