@@ -10,6 +10,8 @@ erControllers.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $
     $scope.order = 'age';
 }]);
 
-erControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
-    $scope.phoneId = $routeParams.phoneId;
+erControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+    $http.get('model/phones/' + $routeParams.phoneId + '.json').success(function(phone) {
+        $scope.phone = phone;
+    });
 }]);
