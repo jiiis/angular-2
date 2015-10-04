@@ -1,9 +1,16 @@
 'use strict';
 
 describe('erNiuNiu', function() {
+    it('should redirect index.html to index.html#/phones', function() {
+        browser.get('app/index.html');
+        browser.getLocationAbsUrl().then(function(url) {
+            expect(url).toBe('/phones');
+        });
+    });
+
     describe('Phone list view', function() {
         beforeEach(function() {
-            browser.get('app/index.html');
+            browser.get('app/index.html#/phones');
         });
 
         var ePhones = element.all(by.repeater('phone in phones')),
@@ -64,11 +71,11 @@ describe('erNiuNiu', function() {
                 expect(url).toBe('/phones/nexus-s');
             });
         });
+    });
 
-        it('should redirect index.html to index.html#/phones', function() {
-            browser.getLocationAbsUrl().then(function(url) {
-                expect(url).toBe('/phones');
-            });
+    describe('Phone detail view', function() {
+        beforeEach(function() {
+            browser.get('app/index.html#/phones/nexus-s');
         });
     });
 });
