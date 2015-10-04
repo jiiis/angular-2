@@ -28,7 +28,7 @@ describe('erNiuNiu', function() {
         });
 
         it('should display the current filter value as the page heading', function() {
-            var eHeading = element(by.css('.main h3'));
+            var eHeading = element(by.css('.phone-list-main h3'));
 
             eQuery.clear();
             expect(eHeading.getText()).toMatch(/^Filtered by:\s*$/);
@@ -65,7 +65,7 @@ describe('erNiuNiu', function() {
         it('should render phone specific links', function() {
             eQuery.clear();
             eQuery.sendKeys('nexus');
-            element.all(by.css('.phone-list a')).first().click();
+            element.all(by.css('.phone-list-list a')).first().click();
             expect(browser.getLocationAbsUrl()).toBe('/phones/nexus-s');
             browser.getLocationAbsUrl().then(function(url) {
                 expect(url).toBe('/phones/nexus-s');
@@ -79,7 +79,7 @@ describe('erNiuNiu', function() {
         });
 
         it('should show the correct phoneId binding value', function() {
-            expect(element(by.binding('phoneId')).getText()).toBe('nexus-s');
+            expect(element(by.binding('phone.name')).getText()).toBe('Nexus S');
         });
     });
 });
