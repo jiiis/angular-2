@@ -35,13 +35,20 @@ describe('erNiuNiu controllers', function() {
     });
 
     describe('PhoneDetailCtrl', function() {
-        var ctrl, scope, $httpBackend;
+        var ctrl, scope, $httpBackend,
+            xyzPhoneData = function() {
+                return {
+                    name: 'phone xyz',
+                    images:[
+                        'images/url_1.png',
+                        'images/url_2.png'
+                    ]
+                };
+            };
 
         beforeEach(inject(function($controller, $rootScope, $routeParams, _$httpBackend_) {
             $httpBackend = _$httpBackend_;
-            $httpBackend.expectGET('model/phones/xyz.json').respond({
-                name: 'Phone XYZ'
-            });
+            $httpBackend.expectGET('model/phones/xyz.json').respond(xyzPhoneData());
 
             $routeParams.phoneId = 'xyz';
 
@@ -55,9 +62,7 @@ describe('erNiuNiu controllers', function() {
             expect(scope.phone).toBeUndefined();
 
             $httpBackend.flush();
-            expect(scope.phone).toEqual({
-                name: 'Phone XYZ'
-            });
+            expect(scope.phone).toEqual(xyzPhoneData());
         });
     });
 });
