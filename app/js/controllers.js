@@ -13,5 +13,10 @@ erControllers.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $
 erControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
     $http.get('model/phones/' + $routeParams.phoneId + '.json').success(function(phone) {
         $scope.phone = phone;
+        $scope.imageCurrent = phone.images[0];
     });
+
+    $scope.setImage = function(image) {
+        $scope.imageCurrent = image;
+    };
 }]);
