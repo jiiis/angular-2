@@ -11,3 +11,7 @@
     width: 80px;
     height: 80px;
 }
+
+.phone-detail-detail dl {
+    margin: 0;
+}
