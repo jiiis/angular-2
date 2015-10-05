@@ -1,3 +1,7 @@
+.view-container {
+    position: relative;
+}
+
 .phone-list-sidebar {
     margin: 0 0 20px;
 }
