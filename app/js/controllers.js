@@ -3,12 +3,12 @@
 var erControllers = angular.module('erControllers', []);
 
 erControllers.controller('PhoneListCtrl', ['$scope', 'Phones', function($scope, Phones) {
-    $scope.phones = Phones.findAll();
+    $scope.phones = Phones.query();
     $scope.order = 'age';
 }]);
 
 erControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone', function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.find({
+    $scope.phone = Phone.get({
         phoneId: $routeParams.phoneId
     }, function(phone) {
         $scope.imageCurrent = phone.images[0];
