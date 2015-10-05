@@ -22,7 +22,7 @@
             <h3 ng-bind-template="Filtered by: {{ query }}"></h3>
             <hr>
             <ul class="list-unstyled media-list phone-list-list">
-                <li class="media" ng-repeat="phone in phones | filter:query | orderBy:order">
+                <li class="media phone-list-listing" ng-repeat="phone in phones | filter:query | orderBy:order">
                     <div class="media-left media-middle">
                         <a href="#/phones/{{ phone.id }}">
                             <img class="media-object img-thumbnail" ng-src="{{ phone.imageUrl }}">

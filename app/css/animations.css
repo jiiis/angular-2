@@ -1,0 +1,30 @@
+.phone-list-listing.ng-enter,
+.phone-list-listing.ng-leave,
+.phone-list-listing.ng-move {
+    -webkit-transition: 0.3s linear all;
+    -moz-transition: 0.3s linear all;
+    -o-transition: 0.3s linear all;
+    transition: 0.3s linear all;
+}
+
+.phone-list-listing.ng-enter,
+.phone-list-listing.ng-move {
+    opacity: 0;
+    height: 0;
+}
+
+.phone-list-listing.ng-enter.ng-enter-active,
+.phone-list-listing.ng-move.ng-move-active {
+    opacity: 1;
+    height: 80px;
+}
+
+.phone-list-listing.ng-leave {
+    opacity: 1;
+    height: 80px;
+}
+
+.phone-list-listing.ng-leave.ng-leave-active {
+    opacity: 0;
+    height: 0;
+}
