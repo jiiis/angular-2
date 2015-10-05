@@ -2,14 +2,15 @@
 
 var erControllers = angular.module('erControllers', []);
 
-erControllers.controller('PhoneListCtrl', ['$scope', '$http', 'Phones', function($scope, $http, Phones) {
+erControllers.controller('PhoneListCtrl', ['$scope', 'Phones', function($scope, Phones) {
     $scope.phones = Phones.findAll();
     $scope.order = 'age';
 }]);
 
-erControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
-    $http.get('model/phones/' + $routeParams.phoneId + '.json').success(function(phone) {
-        $scope.phone = phone;
+erControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone', function($scope, $routeParams, Phone) {
+    $scope.phone = Phone.find({
+        phoneId: $routeParams.phoneId
+    }, function(phone) {
         $scope.imageCurrent = phone.images[0];
     });
 

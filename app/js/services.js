@@ -13,9 +13,9 @@ erServices.factory('Phones', ['$resource', function($resource) {
 
 erServices.factory('Phone', ['$resource', function($resource) {
     return $resource('model/phones/:phoneId.json', {}, {
-        findById: {
+        find: {
             method: 'GET',
-            isArray: true
+            isArray: false
         }
     });
 }]);
