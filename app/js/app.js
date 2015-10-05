@@ -4,7 +4,8 @@ var erNiuNiu = angular.module('erNiuNiu', [
     'ngRoute',
     'erServices',
     'erControllers',
-    'erFilters'
+    'erFilters',
+    'erAnimations'
 ]);
 
 erNiuNiu.config(['$routeProvider', function($routeProvider) {
