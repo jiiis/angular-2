@@ -2,11 +2,8 @@
 
 var erControllers = angular.module('erControllers', []);
 
-erControllers.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http) {
-    $http.get('model/phones.json').success(function(phones) {
-        $scope.phones = phones.splice(0, 50);
-    });
-
+erControllers.controller('PhoneListCtrl', ['$scope', '$http', 'Phones', function($scope, $http, Phones) {
+    $scope.phones = Phones.findAll();
     $scope.order = 'age';
 }]);
 

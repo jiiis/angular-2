@@ -2,6 +2,7 @@
 
 var erNiuNiu = angular.module('erNiuNiu', [
     'ngRoute',
+    'erServices',
     'erControllers',
     'erFilters'
 ]);
