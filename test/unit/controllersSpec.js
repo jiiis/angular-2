@@ -1,6 +1,13 @@
 'use strict';
 
 describe('erNiuNiu controllers', function() {
+    beforeEach(function() {
+        this.addMatchers({
+            toEqualData: function(expected) {
+                return angular.equals(this.actual, expected);
+            }
+        });
+    });
     beforeEach(module('erNiuNiu'));
 
     describe('PhoneListCtrl', function() {
@@ -20,10 +27,10 @@ describe('erNiuNiu controllers', function() {
         }));
 
         it('should create model "phones" with 2 items fetched from XHR', function() {
-            expect(scope.phones).toBeUndefined();
+            expect(scope.phones).toEqualData([]);
 
             $httpBackend.flush();
-            expect(scope.phones).toEqual([
+            expect(scope.phones).toEqualData([
                 {name: 'Nexus S'},
                 {name: 'Motorola DROID'}
             ]);
@@ -59,10 +66,10 @@ describe('erNiuNiu controllers', function() {
         }));
 
         it('should fetch phone detail', function() {
-            expect(scope.phone).toBeUndefined();
+            expect(scope.phone).toEqualData({});
 
             $httpBackend.flush();
-            expect(scope.phone).toEqual(xyzPhoneData());
+            expect(scope.phone).toEqualData(xyzPhoneData());
         });
     });
 });
