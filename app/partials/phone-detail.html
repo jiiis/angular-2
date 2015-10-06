@@ -3,7 +3,9 @@
         <div class="col-xs-12">
             <div class="page-header row">
                 <div class="col-sm-6 col-md-4 hidden-xs">
-                    <img class="img-responsive center-block phone-detail-main-image" ng-src="{{ imageCurrent }}">
+                    <div class="center-block phone-detail-main-images">
+                        <img class="phone-detail-main-image" ng-repeat="image in phone.images" ng-src="{{ image }}" ng-class="{ active:image===imageCurrent }">
+                    </div>
                 </div>
                 <div class="col-sm-6 col-md-8">
                     <h1>{{ phone.name }}</h1>

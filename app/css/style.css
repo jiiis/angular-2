@@ -19,3 +19,15 @@
 .phone-detail-detail dl {
     margin: 0;
 }
+
+.phone-detail-main-images {
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.phone-detail-main-images > img {
+    width: 300px;
+    height: 300px;
+}
